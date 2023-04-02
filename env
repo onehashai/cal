@@ -1,0 +1,34 @@
+NEXT_PUBLIC_STRIPE_PUBLIC_KEY=pk_test_51MqUUoSG9mBUA74WIZtp7i6LZ1jSHEEZGl9fwX3MSakDxPqdStOjM2glFb0XBljhGuWMV4YQ3GE4KQLDgK5zQnuB00MvZNd7NL
+PAYMENT_FEE_FIXED=10
+PAYMENT_FEE_PERCENTAGE=0.005
+DATABASE_URL="postgresql://postgres:postgres@onecalfast.cl2gbuhtdgj5.us-east-1.rds.amazonaws.com:5432"
+NEXT_PUBLIC_WEBAPP_URL='https://app.onecal.ai'
+# Change to 'http://localhost:3001' if running the website simultaneously
+NEXT_PUBLIC_WEBSITE_URL='https://app.onecal.ai'
+NEXT_PUBLIC_CONSOLE_URL='https://app.onecal.ai'
+NEXT_PUBLIC_EMBED_LIB_URL='https://app.onecal.ai/api/auth/embed/embed.js'
+NEXTAUTH_URL='https://app.onecal.ai'
+# @see: https://next-auth.js.org/configuration/options#nextauth_secret
+# You can use: `openssl rand -base64 32` to generate one
+NEXTAUTH_SECRET=U5P7FUtfyaAlbuQ0yxDm40UJ3zdE6nfXzpxnzPZ+i3s=
+CRON_API_KEY='0cc0e6c35519bba620c9360cfe3e68d0'
+CALENDSO_ENCRYPTION_KEY=u9fCw6TKjsUpumdHlaBcUqNAMBMQ2VKn
+SENDGRID_API_KEY=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
+SENDGRID_EMAIL=email@intouchsoftware.co.in
+STRIPE_PRIVATE_KEY=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
+STRIPE_WEBHOOK_SECRET=whsec_pDALiTEgICZEmTQgN2tvQf9ob8w2LDyj
+STRIPE_CLIENT_ID=ca_NcVUeUT6Bb62wMhLEbBjnZlFqnOMrJzY
+API_KEY_PREFIX=cal_
+EMAIL_FROM='digital@onehash.ai'
+EMAIL_SERVER_HOST='smtp.gmail.com'
+EMAIL_SERVER_PORT=465
+EMAIL_SERVER_USER='digital@onehash.ai'
+# You will need to provision an App Password.
+# @see https://support.google.com/accounts/answer/185833
+EMAIL_SERVER_PASSWORD='fmdaswylcmpsimna'
+NEXT_PUBLIC_TEAM_IMPERSONATION=false
+NEXT_PUBLIC_APP_NAME="onecal.ai"
+NEXT_PUBLIC_SUPPORT_MAIL_ADDRESS="admin@onecal.com"
+NEXT_PUBLIC_COMPANY_NAME="onehash.ai"
+GOOGLE_LOGIN_ENABLED="true"
+GOOGLE_API_CREDENTIALS={"web":{"client_id":"561226343494-tj8u9b5t4p2is60hnfgrfirqpnirjgdp.apps.googleusercontent.com","project_id":"onecal-382209","auth_uri":"https://accounts.google.com/o/oauth2/auth","token_uri":"https://oauth2.googleapis.com/token","auth_provider_x509_cert_url":"https://www.googleapis.com/oauth2/v1/certs","client_secret":"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","redirect_uris":["https://app.onecal.ai/api/integrations/googlecalendar/callback","https://app.onecal.ai/api/auth/callback/google"],"javascript_origins":["https://app.onecal.ai"]}}
