@@ -5,7 +5,9 @@ import path from "path";
 
 import prisma from ".";
 
-dotEnv.config({ path: "../../.env.appStore" });
+console.log(process.env.STRIPE_CLIENT_ID);
+
+dotEnv.config({ path: "../../.env" });
 
 export const seededForm = {
   id: "948ae412-d995-4865-875a-48302588de03",

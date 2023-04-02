@@ -72,7 +72,8 @@
     },
     "build": {
       "dependsOn": ["^build"],
-      "outputs": ["dist/**", ".next/**"]
+      "outputs": ["dist/**", ".next/**"],
+      "env": ["NEXT_PUBLIC_COMPANY_NAME","STRIPE_CLIENT_ID"]
     },
     "db-deploy": {
       "cache": false,
@@ -172,7 +173,7 @@
       "cache": false
     }
   },
-  "globalDependencies": ["yarn.lock"],
+  "globalDependencies": ["yarn.lock",".env"],
   "globalEnv": [
     "ALCHEMY_API_KEY",
     "ANALYZE",
