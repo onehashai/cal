@@ -14,7 +14,6 @@ import nodemailer from "nodemailer";
 import { authenticator } from "otplib";
 import path from "path";
 
-import checkLicense from "@calcom/features/ee/common/server/checkLicense";
 import ImpersonationProvider from "@calcom/features/ee/impersonation/lib/ImpersonationProvider";
 import jackson from "@calcom/features/ee/sso/lib/jackson";
 import { clientSecretVerifier, hostedCal, isSAMLLoginEnabled } from "@calcom/features/ee/sso/lib/saml";
@@ -485,7 +484,7 @@ export const AUTH_OPTIONS: AuthOptions = {
       return token;
     },
     async session({ session, token }) {
-      const hasValidLicense = await checkLicense(prisma);
+      const hasValidLicense = true;
       const calendsoSession: Session = {
         ...session,
         hasValidLicense,

@@ -7,7 +7,7 @@ import prisma from ".";
 
 console.log(process.env.STRIPE_CLIENT_ID);
 
-dotEnv.config({ path: "../../.env" });
+dotEnv.config({ path: "../../.env.prod" });
 
 export const seededForm = {
   id: "948ae412-d995-4865-875a-48302588de03",
@@ -170,7 +170,7 @@ async function createApp(
   });
   console.log(`📲 Upserted ${isTemplate ? "template" : "app"}: '${slug}'`);
 }
-
+console.log(process.env);
 export default async function main() {
   // Calendar apps
   await createApp("apple-calendar", "applecalendar", ["calendar"], "apple_calendar");
