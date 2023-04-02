@@ -41,9 +41,10 @@ yarn-error.log*
 .env.*
 !.env.example
 !.env.appStore.example
-
+env-prod
 # vercel
 .vercel
+
 
 # Webstorm
 env
