@@ -103,7 +103,12 @@ export default function Signup({ prepopulateFormValues }: inferSSRProps<typeof g
                     labelProps={{
                       className: "block text-sm font-medium text-gray-700",
                     }}
-                    {...register("password")}
+                    {...register("password", {
+                      validate: (value: string) => {
+                        if (value.length >= 7) return true;
+                        return "Password length must be atleast 7";
+                      },
+                    })}
                     className="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 shadow-sm focus:border-black focus:outline-none focus:ring-black sm:text-sm"
                   />
                   <PasswordField
