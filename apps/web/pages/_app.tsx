@@ -14,6 +14,7 @@ import { seoConfig } from "@lib/config/next-seo.config";
 
 import I18nLanguageHandler from "@components/I18nLanguageHandler";
 
+import "../styles/custom.css";
 import "../styles/globals.css";
 
 const interFont = Inter({ subsets: ["latin"], variable: "--font-inter", preload: true, display: "swap" });

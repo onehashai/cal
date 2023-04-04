@@ -1,4 +1,9 @@
-require("dotenv").config({ path: "../../.env" });
+if (!process.env.VERCEL_URL) {
+  require("dotenv").config({ path: "../../.env.local" });
+} else {
+  require("dotenv").config({ path: "../../.env" });
+}
+
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 const { withSentryConfig } = require("@sentry/nextjs");
 const os = require("os");
