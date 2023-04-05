@@ -1,8 +1,12 @@
 import type { GetServerSidePropsContext } from "next";
 import { signIn } from "next-auth/react";
 import { useRouter } from "next/router";
+import { useState } from "react";
+import type { CountdownApi } from "react-countdown";
+import Countdown from "react-countdown";
 import type { SubmitHandler } from "react-hook-form";
 import { FormProvider, useForm } from "react-hook-form";
+import { toast } from "react-toastify";
 
 import LicenseRequired from "@calcom/features/ee/common/components/v2/LicenseRequired";
 import { isSAMLLoginEnabled } from "@calcom/features/ee/sso/lib/saml";
@@ -11,7 +15,7 @@ import { useLocale } from "@calcom/lib/hooks/useLocale";
 import { collectPageParameters, telemetryEventTypes, useTelemetry } from "@calcom/lib/telemetry";
 import prisma from "@calcom/prisma";
 import type { inferSSRProps } from "@calcom/types/inferSSRProps";
-import { Alert, Button, EmailField, HeadSeo, PasswordField, TextField } from "@calcom/ui";
+import { Alert, Button, EmailField, HeadSeo, InputField, PasswordField, TextField } from "@calcom/ui";
 
 import { asStringOrNull } from "../lib/asStringOrNull";
 import { IS_GOOGLE_LOGIN_ENABLED } from "../server/lib/constants";
@@ -23,13 +27,17 @@ type FormValues = {
   password: string;
   passwordcheck: string;
   apiError: string;
+  otp?: string;
 };
 
 export default function Signup({ prepopulateFormValues }: inferSSRProps<typeof getServerSideProps>) {
   const { t } = useLocale();
   const router = useRouter();
+  const [timer, setTimer] = useState<CountdownApi | null>(null);
+  const [otpLoading, setOtpLoading] = useState(false);
   const telemetry = useTelemetry();
-
+  const [otp, setOtp] = useState("");
+  const [sendOtpButtonActive, setSendOtpButtonActive] = useState(true);
   const methods = useForm<FormValues>({
     defaultValues: prepopulateFormValues,
   });
@@ -37,11 +45,23 @@ export default function Signup({ prepopulateFormValues }: inferSSRProps<typeof g
     register,
     formState: { errors, isSubmitting },
   } = methods;
-
+  function checkEmailPattern(email: string) {
+    const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+    return emailPattern.test(email);
+  }
   const handleErrors = async (resp: Response) => {
     if (!resp.ok) {
       const err = await resp.json();
       throw new Error(err.message);
+    }
+  };
+  const resendOtpRenderer = ({ completed, seconds }) => {
+    if (completed) {
+      return "";
+    } else {
+      return (
+        <p className="text-gray mt-2 flex items-center text-sm text-gray-700">Resend OTP in {seconds}s</p>
+      );
     }
   };
 
@@ -69,7 +89,53 @@ export default function Signup({ prepopulateFormValues }: inferSSRProps<typeof g
         methods.setError("apiError", { message: err.message });
       });
   };
+  function sendEmail(e: any) {
+    e.preventDefault();
 
+    setOtpLoading(true);
+    const otp = Math.floor(1000 + Math.random() * 9000);
+    const email = methods.getValues().email;
+    if (!email || !checkEmailPattern(email)) {
+      methods.setError("email", { message: "Please enter a valid email" });
+      setOtpLoading(false);
+      return;
+    }
+    methods.clearErrors("email");
+    const data = {
+      to: email,
+      otp: otp,
+    };
+    console.log(data);
+    fetch("/api/auth/sendotptoemail", {
+      body: JSON.stringify(data),
+      headers: {
+        "Content-Type": "application/json",
+      },
+      method: "POST",
+    })
+      .then(handleErrors)
+      .then(async () => {
+        console.log("otp", otp);
+        setOtp(otp.toString() as string);
+        toast.success(" OTP sent to email");
+        setOtpLoading(false);
+        timer?.start();
+        setSendOtpButtonActive(false);
+        setTimeout(() => {
+          timer?.stop();
+          setSendOtpButtonActive(true);
+        }, 10000);
+      })
+      .catch((err) => {
+        setOtpLoading(false);
+        methods.setError("apiError", { message: err.message });
+      });
+  }
+  function setRef(countdown: Countdown) {
+    if (countdown) {
+      setTimer(countdown.getApi());
+    }
+  }
   return (
     <LicenseRequired>
       <div
@@ -97,9 +163,36 @@ export default function Signup({ prepopulateFormValues }: inferSSRProps<typeof g
                   <EmailField
                     {...register("email")}
                     disabled={prepopulateFormValues?.email}
-                    className="disabled:bg-gray-200 disabled:hover:cursor-not-allowed"
+                    hasSuffixpadding={false}
+                    addOnSuffix={
+                      <Button
+                        loading={otpLoading}
+                        onClick={sendEmail}
+                        className=" justify-center"
+                        disabled={!sendOtpButtonActive}>
+                        send OTP
+                      </Button>
+                    }
+                    className=" inline-block  disabled:bg-gray-200 disabled:hover:cursor-not-allowed"
+                  />
+                  {sendOtpButtonActive ? (
+                    ""
+                  ) : (
+                    <Countdown ref={setRef} date={Date.now() + 10000} renderer={resendOtpRenderer} />
+                  )}
+                  <InputField
+                    placeholder="Enter OTP"
+                    {...register("otp", {
+                      validate: (value) => {
+                        if (otp.toString().length > 0 && value == otp) return true;
+                        return "Invalid OTP";
+                      },
+                    })}
+                    label="OTP"
+                    className="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 shadow-sm focus:border-black focus:outline-none focus:ring-black sm:text-sm"
                   />
                   <PasswordField
+                    placeholder="Password length must be atleast 7"
                     labelProps={{
                       className: "block text-sm font-medium text-gray-700",
                     }}

@@ -40,6 +40,7 @@ export function InputLeading(props: JSX.IntrinsicElements["div"]) {
 }
 
 type InputFieldProps = {
+  hasSuffixpadding?: boolean;
   label?: ReactNode;
   hint?: ReactNode;
   hintErrors?: string[];
@@ -62,14 +63,16 @@ type AddonProps = {
   isFilled?: boolean;
   className?: string;
   error?: boolean;
+  hasPadding?: boolean;
 };
 
-const Addon = ({ isFilled, children, className, error }: AddonProps) => (
+const Addon = ({ isFilled, children, className, error, hasPadding }: AddonProps) => (
   <div
     className={classNames(
-      "addon-wrapper h-9 border border-gray-300 px-3",
+      "addon-wrapper h-9 border border-gray-300 ",
       isFilled && "bg-gray-100",
-      className
+      className,
+      hasPadding && "px-3"
     )}>
     <div className={classNames("flex h-full flex-col justify-center text-sm", error && "text-red-900")}>
       <span className="whitespace-nowrap py-2.5">{children}</span>
@@ -156,6 +159,7 @@ export const InputField = forwardRef<HTMLInputElement, InputFieldProps>(function
           {addOnSuffix && (
             <Addon
               isFilled={addOnFilled}
+              hasPadding={props.hasSuffixpadding}
               className={classNames(
                 "ltr:rounded-r-md ltr:border-l-0 rtl:rounded-l-md rtl:border-r-0",
                 addOnClassname
@@ -252,15 +256,17 @@ export const EmailInput = forwardRef<HTMLInputElement, InputFieldProps>(function
 
 export const EmailField = forwardRef<HTMLInputElement, InputFieldProps>(function EmailField(props, ref) {
   return (
-    <InputField
-      ref={ref}
-      type="email"
-      autoCapitalize="none"
-      autoComplete="email"
-      autoCorrect="off"
-      inputMode="email"
-      {...props}
-    />
+    <>
+      <InputField
+        ref={ref}
+        type="email"
+        autoCapitalize="none"
+        autoComplete="email"
+        autoCorrect="off"
+        inputMode="email"
+        {...props}
+      />
+    </>
   );
 });
 

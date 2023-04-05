@@ -15894,6 +15894,9 @@ __metadata:
     jest-watch-typeahead: ^2.0.0
     lint-staged: ^12.5.0
     prettier: ^2.8.6
+    react-countdown: ^2.3.5
+    react-toastify: ^9.1.2
+    timer-node: ^5.0.7
     ts-jest: ^28.0.8
     tsc-absolute: ^1.0.0
     turbo: ^1.8.3
@@ -31214,6 +31217,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"react-countdown@npm:^2.3.5":
+  version: 2.3.5
+  resolution: "react-countdown@npm:2.3.5"
+  dependencies:
+    prop-types: ^15.7.2
+  peerDependencies:
+    react: ">= 15"
+    react-dom: ">= 15"
+  checksum: 24289f40591e88003052270e4eb9f7a87838e403ec2036fbd5ef99d57851c8d9739dae619d65f339494e582e34e2691c033a975bd8f7416730fc9beaf76a2b4b
+  languageName: node
+  linkType: hard
+
 "react-date-picker@npm:^8.3.6, react-date-picker@npm:^8.4.0":
   version: 8.4.0
   resolution: "react-date-picker@npm:8.4.0"
@@ -31845,6 +31860,18 @@ __metadata:
     react: ^18 || ^17.0.1 || ^16
     react-dom: ^18 || ^17.0.1 || ^16
   checksum: 646205fb2c66694dfc70c6a32b079eb64d0e82269b8f3172011a312f6fc745a158453f7eb3565a0dac78184c3d93d005bccbe7796cc5387684be033faf90b131
+  languageName: node
+  linkType: hard
+
+"react-toastify@npm:^9.1.2":
+  version: 9.1.2
+  resolution: "react-toastify@npm:9.1.2"
+  dependencies:
+    clsx: ^1.1.1
+  peerDependencies:
+    react: ">=16"
+    react-dom: ">=16"
+  checksum: 0b21851bbb03592aa6e318ca62622016a6aa37cc52484c4a2fee39ce38c9933993e570c8ad9375f0a7061d3401fd175796b74f851b7d5a711b4802e0a3f9f34a
   languageName: node
   linkType: hard
 
@@ -35481,6 +35508,13 @@ __metadata:
   version: 4.0.1
   resolution: "timed-out@npm:4.0.1"
   checksum: 98efc5d6fc0d2a329277bd4d34f65c1bf44d9ca2b14fd267495df92898f522e6f563c5e9e467c418e0836f5ca1f47a84ca3ee1de79b1cc6fe433834b7f02ec54
+  languageName: node
+  linkType: hard
+
+"timer-node@npm:^5.0.7":
+  version: 5.0.7
+  resolution: "timer-node@npm:5.0.7"
+  checksum: 94710ae99251c82eea5bbe8bedd523059e9ad831dedb5341c2439aebe31bf1ae8214c3f0a6930e632f3560ec94945ec640c61d97f6d1145e1139590761697dfa
   languageName: node
   linkType: hard
 

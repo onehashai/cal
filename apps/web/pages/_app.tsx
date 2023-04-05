@@ -3,6 +3,8 @@ import { Inter } from "next/font/google";
 import localFont from "next/font/local";
 import Head from "next/head";
 import Script from "next/script";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 import "@calcom/embed-core/src/embed-iframe";
 import LicenseRequired from "@calcom/features/ee/common/components/LicenseRequired";
@@ -50,6 +52,7 @@ function MyApp(props: AppProps) {
   const getLayout = Component.getLayout ?? ((page) => page);
   return (
     <AppProviders {...providerProps}>
+      <ToastContainer />
       <DefaultSeo {...seoConfig.defaultNextSeo} />
       <I18nLanguageHandler />
       <Script
