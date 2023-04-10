@@ -3,7 +3,8 @@ import { useEffect, useState } from "react";
 import dayjs from "@calcom/dayjs";
 import { WEBAPP_URL } from "@calcom/lib/constants";
 import { useLocale } from "@calcom/lib/hooks/useLocale";
-import { RouterOutputs, trpc } from "@calcom/trpc/react";
+import type { RouterOutputs } from "@calcom/trpc/react";
+import { trpc } from "@calcom/trpc/react";
 import type { ITimezone } from "@calcom/ui";
 import { Avatar, DatePicker, Label, Select, TimezoneSelect } from "@calcom/ui";
 
