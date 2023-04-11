@@ -15,7 +15,8 @@
     "dx": "yarn db-setup",
     "generate-schemas": "prisma generate && prisma format",
     "post-install": "yarn generate-schemas",
-    "seed-app-store": "ts-node --transpile-only ./seed-app-store.ts",
+    "seed-app-store-dev": " NODE_ENV=development && ts-node --transpile-only ./seed-app-store.ts",
+    "seed-app-store-prod": " NODE_ENV=production && ts-node --transpile-only ./seed-app-store.ts",
     "delete-app": "ts-node --transpile-only ./delete-app.ts",
     "seed-insights": "ts-node --transpile-only ./seed-insights.ts"
   },

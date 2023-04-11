@@ -300,6 +300,24 @@ const ZoomVideoApiAdapter = (credential: CredentialPayload): VideoApiAdapter => 
         return Promise.reject(new Error("Failed to delete meeting"));
       }
     },
+    deauthorize: async (token: string) => {
+      try {
+        const { client_id, client_secret } = await getZoomAppKeys();
+        const authHeader = "Basic " + Buffer.from(client_id + ":" + client_secret).toString("base64");
+        await fetch("https://zoom.us/oauth/token", {
+          method: "POST",
+          headers: {
+            Authorization: authHeader,
+            "Content-Type": "application/x-www-form-urlencoded",
+          },
+          body: `token=${token}`,
+        });
+        return Promise.resolve();
+      } catch (error) {
+        console.log(error);
+        return Promise.reject(new Error("Failed to deauthorize"));
+      }
+    },
     updateMeeting: async (bookingRef: PartialReference, event: CalendarEvent): Promise<VideoCallData> => {
       try {
         await fetchZoomApi(`meetings/${bookingRef.uid}`, {

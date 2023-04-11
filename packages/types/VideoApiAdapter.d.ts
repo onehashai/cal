@@ -13,6 +13,7 @@ export interface VideoCallData {
 // VideoApiAdapter is defined by the Video App. The App currently can choose to not define it. So, consider in type that VideoApiAdapter can be undefined.
 export type VideoApiAdapter =
   | {
+      deauthorize(): Promise<unknown>;
       createMeeting(event: CalendarEvent): Promise<VideoCallData>;
 
       updateMeeting(bookingRef: PartialReference, event: CalendarEvent): Promise<VideoCallData>;

@@ -13,6 +13,7 @@ import stripe from "@calcom/app-store/stripepayment/lib/server";
 import { getPremiumPlanProductId } from "@calcom/app-store/stripepayment/lib/utils";
 import getApps, { getLocationGroupedOptions } from "@calcom/app-store/utils";
 import { cancelScheduledJobs } from "@calcom/app-store/zapier/lib/nodeScheduler";
+import ZoomVideoApiAdapter from "@calcom/app-store/zoomvideo/lib/VideoApiAdapter";
 import { getCalendarCredentials, getConnectedCalendars } from "@calcom/core/CalendarManager";
 import { DailyLocationType } from "@calcom/core/location";
 import {
@@ -872,7 +873,6 @@ const loggedInViewerRouter = router({
       if (!credential) {
         throw new TRPCError({ code: "NOT_FOUND" });
       }
-
       const eventTypes = await prisma.eventType.findMany({
         where: {
           userId: ctx.user.id,
@@ -1123,6 +1123,10 @@ const loggedInViewerRouter = router({
       }
 
       // if zapier get disconnected, delete zapier apiKey, delete zapier webhooks and cancel all scheduled jobs from zapier
+      if (credential.app?.slug === "zoom") {
+        console.log("deauthorzining zoom");
+        await ZoomVideoApiAdapter().deauthorize(credential?.key.access_token as string);
+      }
       if (credential.app?.slug === "zapier") {
         await prisma.apiKey.deleteMany({
           where: {

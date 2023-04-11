@@ -6,9 +6,11 @@ import path from "path";
 import prisma from ".";
 
 console.log(process.env.STRIPE_CLIENT_ID);
-
-dotEnv.config({ path: "../../.env.prod" });
-
+if (process.env.NODE_ENV === "production") {
+  dotEnv.config({ path: "../../.env.prod" });
+} else {
+  dotEnv.config({ path: "../../.env.local" });
+}
 export const seededForm = {
   id: "948ae412-d995-4865-875a-48302588de03",
   name: "Seeded Form - Pro",
