@@ -33,21 +33,21 @@ const PrivacyPolicyPage = () => {
         <div className="mt-8 overflow-hidden rounded-lg bg-white shadow">
           <div className="px-4 py-5 sm:p-6">
             <p className="text-base leading-6 text-gray-500">
-              The User’s right to privacy is of paramount importance to OneHash. Any information provided by
-              the User will not be shared with any third party unless identified as such elsewhere. OneHash
+              The User’s right to privacy is of paramount importance to OneCal. Any information provided by
+              the User will not be shared with any third party unless identified as such elsewhere. OneCal
               reserves the right to use the information to provide the User a more personalized online
               experience. We host your data at international data centersand the service levels offered by
               them will be applicable to you. We willreasonably put all effort to ensure that the servers
               managed by us are up andrunning 24x7. The Site may provide links to web sites and access to
               content, products and services from third parties, including users, advertisers, affiliates and
-              sponsors of the Site. You agree that OneHash is not responsible for the availability of, and
+              sponsors of the Site. You agree that OneCal is not responsible for the availability of, and
               content provided on, third party web sites. The User is requested to peruse the policies posted
-              by other web sites regarding privacy and other topics before use. OneHash is not responsible for
+              by other web sites regarding privacy and other topics before use. OneCal is not responsible for
               third party content accessible through the Site, including opinions, advice, statements and
-              advertisements, and User shall bear all risks associated with the use of such content. OneHash
-              is not responsible for any loss or damage of any sort User may incur from dealing with any third
-              party This Terms of Use constitutes the entire agreement between you and OneHash with respect to
-              the Site. OneHash maintains this site in India with some information stored in servers located
+              advertisements, and User shall bear all risks associated with the use of such content. OneCal is
+              not responsible for any loss or damage of any sort User may incur from dealing with any third
+              party This Terms of Use constitutes the entire agreement between you and OneCal with respect to
+              the Site. OneCal maintains this site in India with some information stored in servers located
               outside India and you agree with these terms of use. The foregoing is subject to the laws of the
               Republic of India, India shall have the exclusive jurisdiction on any dispute that may arise out
               of the use of this site.
@@ -59,9 +59,9 @@ const PrivacyPolicyPage = () => {
             <p className="text-base leading-6 text-gray-500">
               YOU ACKNOWLEDGE THAT YOU HAVE READ THIS TERMS OF USE, UNDERSTAND IT, AND AGREE TO BE BOUND BY
               IT.YOU FURTHER AGREE THAT IT IS THE COMPLETE AND EXCLUSIVE STATEMENT OF THEAGREEMENT BETWEEN YOU
-              AND OneHash WHICH SUPERSEDES ANY PROPOSED OR PRIORAGREEMENT, ORAL OR WRITTEN, AND ANY OTHER
-              COMMUNICATIONS BETWEEN YOU AND OneHash RELATING TO YOUR USE OF THE SITE. If you have any
-              questions or comments about our Terms of Use, You can contact us at support@onehash.ai
+              AND OneCal WHICH SUPERSEDES ANY PROPOSED OR PRIORAGREEMENT, ORAL OR WRITTEN, AND ANY OTHER
+              COMMUNICATIONS BETWEEN YOU AND OneCal RELATING TO YOUR USE OF THE SITE. If you have any
+              questions or comments about our Terms of Use, You can contact us at support@OneCal.ai
             </p>
           </div>
         </div>
