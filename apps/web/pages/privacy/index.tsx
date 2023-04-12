@@ -21,6 +21,15 @@ const PrivacyPolicyPage = () => {
             </p>
           </div>
         </div>
+        <div className="mt-3 overflow-hidden rounded-lg bg-white shadow">
+          <div className="px-4 py-5 sm:p-6">
+            <h3 className="font-semibold text-gray-800">Google's Limited use policy</h3>
+            <p className="text-base leading-6 text-gray-500">
+              OneCal's use and transfer to any other app of information received from Google APIs will adhere
+              to Google API Services User Data Policy, including the Limited Use requirements.
+            </p>
+          </div>
+        </div>
         <div className="mt-8 overflow-hidden rounded-lg bg-white shadow">
           <div className="px-4 py-5 sm:p-6">
             <p className="text-base leading-6 text-gray-500">

@@ -2,11 +2,11 @@ import classNames from "classnames";
 import { jwtVerify } from "jose";
 import type { GetServerSidePropsContext } from "next";
 import { getCsrfToken, signIn } from "next-auth/react";
+import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useState } from "react";
 import { FormProvider, useForm } from "react-hook-form";
-import { FaGoogle } from "react-icons/fa";
 
 import { SAMLLogin } from "@calcom/features/auth/SAMLLogin";
 import { ErrorCode } from "@calcom/features/auth/lib/ErrorCode";
@@ -190,17 +190,20 @@ export default function Login({
               {(isGoogleLoginEnabled || isSAMLLoginEnabled) && <hr className="my-8" />}
               <div className="space-y-3">
                 {isGoogleLoginEnabled && (
-                  <Button
-                    color="secondary"
-                    className="w-full justify-center"
-                    data-testid="google"
-                    StartIcon={FaGoogle}
-                    onClick={async (e) => {
-                      e.preventDefault();
-                      await signIn("google");
-                    }}>
-                    {t("signin_with_google")}
-                  </Button>
+                  <div className="flex justify-center">
+                    <div className="relative cursor-pointer">
+                      <Image
+                        onClick={async (e) => {
+                          e.preventDefault();
+                          await signIn("google");
+                        }}
+                        width={242}
+                        height={50}
+                        src="/google-sign-in.png"
+                        alt="google sign in button"
+                      />
+                    </div>
+                  </div>
                 )}
                 {isSAMLLoginEnabled && (
                   <SAMLLogin
