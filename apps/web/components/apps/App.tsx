@@ -209,6 +209,7 @@ const Component = ({
                     loading: mutation.isLoading,
                   };
                 }
+
                 return (
                   <Button
                     data-testid="install-app-button"
