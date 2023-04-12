@@ -304,7 +304,8 @@ const ZoomVideoApiAdapter = (credential: CredentialPayload): VideoApiAdapter => 
       try {
         const { client_id, client_secret } = await getZoomAppKeys();
         const authHeader = "Basic " + Buffer.from(client_id + ":" + client_secret).toString("base64");
-        await fetch("https://zoom.us/oauth/token", {
+        console.log(client_id, client_secret, authHeader);
+        const resp = await fetch("https://zoom.us/oauth/revoke", {
           method: "POST",
           headers: {
             Authorization: authHeader,
@@ -312,6 +313,7 @@ const ZoomVideoApiAdapter = (credential: CredentialPayload): VideoApiAdapter => 
           },
           body: `token=${token}`,
         });
+        console.log(resp);
         return Promise.resolve();
       } catch (error) {
         console.log(error);
