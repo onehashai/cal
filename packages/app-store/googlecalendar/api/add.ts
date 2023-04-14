@@ -6,11 +6,11 @@ import { WEBAPP_URL } from "@calcom/lib/constants";
 import { encodeOAuthState } from "../../_utils/encodeOAuthState";
 import getAppKeysFromSlug from "../../_utils/getAppKeysFromSlug";
 
-const scopes = [
-  "https://www.googleapis.com/auth/calendar.readonly",
-  "https://www.googleapis.com/auth/calendar.events",
-];
-
+// const scopes = [
+//   "https://www.googleapis.com/auth/calendar.readonly",
+//   "https://www.googleapis.com/auth/calendar.events",
+// ];
+const scopes = ["https://www.googleapis.com/auth/calendar"];
 let client_id = "";
 let client_secret = "";
 
