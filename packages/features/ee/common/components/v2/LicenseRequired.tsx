@@ -1,5 +1,6 @@
 import DOMPurify from "dompurify";
 import { useSession } from "next-auth/react";
+import { useEffect } from "react";
 import type { AriaRole, ComponentType } from "react";
 import React, { Fragment } from "react";
 
@@ -20,6 +21,9 @@ const LicenseRequired = ({ children, as = "", ...rest }: LicenseRequiredProps) =
   const { t } = useLocale();
   const Component = as || Fragment;
   const hasValidLicense = session.data ? session.data.hasValidLicense : null;
+  useEffect(() => {
+    console.log("hasValidLicense", hasValidLicense);
+  }, [hasValidLicense]);
 
   return (
     <Component {...rest}>

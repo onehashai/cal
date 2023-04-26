@@ -8,7 +8,6 @@ import type { SubmitHandler } from "react-hook-form";
 import { FormProvider, useForm } from "react-hook-form";
 import { toast } from "react-toastify";
 
-import LicenseRequired from "@calcom/features/ee/common/components/v2/LicenseRequired";
 import { isSAMLLoginEnabled } from "@calcom/features/ee/sso/lib/saml";
 import { WEBAPP_URL } from "@calcom/lib/constants";
 import { useLocale } from "@calcom/lib/hooks/useLocale";
@@ -137,104 +136,102 @@ export default function Signup({ prepopulateFormValues }: inferSSRProps<typeof g
     }
   }
   return (
-    <LicenseRequired>
-      <div
-        className="flex min-h-screen flex-col justify-center bg-gray-50 py-12 sm:px-6 lg:px-8"
-        aria-labelledby="modal-title"
-        role="dialog"
-        aria-modal="true">
-        <HeadSeo title={t("sign_up")} description={t("sign_up")} />
-        <div className="sm:mx-auto sm:w-full sm:max-w-md">
-          <h2 className="font-cal text-center text-3xl font-extrabold text-gray-900">
-            {t("create_your_account")}
-          </h2>
-        </div>
-        <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
-          <div className="mx-2 bg-white px-4 py-8 shadow sm:rounded-lg sm:px-10">
-            <FormProvider {...methods}>
-              <form onSubmit={methods.handleSubmit(signUp)} className="space-y-6 bg-white">
-                {errors.apiError && <Alert severity="error" message={errors.apiError?.message} />}
-                <div className="space-y-2">
-                  <TextField
-                    addOnLeading={`${process.env.NEXT_PUBLIC_WEBSITE_URL}/`}
-                    {...register("username")}
-                    required
-                  />
-                  <EmailField
-                    {...register("email")}
-                    disabled={prepopulateFormValues?.email}
-                    hasSuffixpadding={false}
-                    addOnSuffix={
-                      <Button
-                        loading={otpLoading}
-                        onClick={sendEmail}
-                        className=" justify-center"
-                        disabled={!sendOtpButtonActive}>
-                        send OTP
-                      </Button>
-                    }
-                    className=" inline-block  disabled:bg-gray-200 disabled:hover:cursor-not-allowed"
-                  />
-                  {sendOtpButtonActive ? (
-                    ""
-                  ) : (
-                    <Countdown ref={setRef} date={Date.now() + 10000} renderer={resendOtpRenderer} />
-                  )}
-                  <InputField
-                    placeholder="Enter OTP"
-                    {...register("otp", {
-                      validate: (value) => {
-                        if (otp.toString().length > 0 && value == otp) return true;
-                        return "Invalid OTP";
-                      },
-                    })}
-                    label="OTP"
-                    className="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 shadow-sm focus:border-black focus:outline-none focus:ring-black sm:text-sm"
-                  />
-                  <PasswordField
-                    placeholder="Password length must be atleast 7"
-                    labelProps={{
-                      className: "block text-sm font-medium text-gray-700",
-                    }}
-                    {...register("password", {
-                      validate: (value: string) => {
-                        if (value.length >= 7) return true;
-                        return "Password length must be atleast 7";
-                      },
-                    })}
-                    className="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 shadow-sm focus:border-black focus:outline-none focus:ring-black sm:text-sm"
-                  />
-                  <PasswordField
-                    label={t("confirm_password")}
-                    {...register("passwordcheck", {
-                      validate: (value) =>
-                        value === methods.watch("password") || (t("error_password_mismatch") as string),
-                    })}
-                  />
-                </div>
-                <div className="flex space-x-2 rtl:space-x-reverse">
-                  <Button type="submit" loading={isSubmitting} className="w-7/12 justify-center">
-                    {t("create_account")}
-                  </Button>
-                  <Button
-                    color="secondary"
-                    className="w-5/12 justify-center"
-                    onClick={() =>
-                      signIn("Cal.com", {
-                        callbackUrl: router.query.callbackUrl
-                          ? `${WEBAPP_URL}/${router.query.callbackUrl}`
-                          : `${WEBAPP_URL}/getting-started`,
-                      })
-                    }>
-                    {t("login_instead")}
-                  </Button>
-                </div>
-              </form>
-            </FormProvider>
-          </div>
+    <div
+      className="flex min-h-screen flex-col justify-center bg-gray-50 py-12 sm:px-6 lg:px-8"
+      aria-labelledby="modal-title"
+      role="dialog"
+      aria-modal="true">
+      <HeadSeo title={t("sign_up")} description={t("sign_up")} />
+      <div className="sm:mx-auto sm:w-full sm:max-w-md">
+        <h2 className="font-cal text-center text-3xl font-extrabold text-gray-900">
+          {t("create_your_account")}
+        </h2>
+      </div>
+      <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
+        <div className="mx-2 bg-white px-4 py-8 shadow sm:rounded-lg sm:px-10">
+          <FormProvider {...methods}>
+            <form onSubmit={methods.handleSubmit(signUp)} className="space-y-6 bg-white">
+              {errors.apiError && <Alert severity="error" message={errors.apiError?.message} />}
+              <div className="space-y-2">
+                <TextField
+                  addOnLeading={`${process.env.NEXT_PUBLIC_WEBSITE_URL}/`}
+                  {...register("username")}
+                  required
+                />
+                <EmailField
+                  {...register("email")}
+                  disabled={prepopulateFormValues?.email}
+                  hasSuffixpadding={false}
+                  addOnSuffix={
+                    <Button
+                      loading={otpLoading}
+                      onClick={sendEmail}
+                      className=" justify-center"
+                      disabled={!sendOtpButtonActive}>
+                      send OTP
+                    </Button>
+                  }
+                  className=" inline-block  disabled:bg-gray-200 disabled:hover:cursor-not-allowed"
+                />
+                {sendOtpButtonActive ? (
+                  ""
+                ) : (
+                  <Countdown ref={setRef} date={Date.now() + 10000} renderer={resendOtpRenderer} />
+                )}
+                <InputField
+                  placeholder="Enter OTP"
+                  {...register("otp", {
+                    validate: (value) => {
+                      if (otp.toString().length > 0 && value == otp) return true;
+                      return "Invalid OTP";
+                    },
+                  })}
+                  label="OTP"
+                  className="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 shadow-sm focus:border-black focus:outline-none focus:ring-black sm:text-sm"
+                />
+                <PasswordField
+                  placeholder="Password length must be atleast 7"
+                  labelProps={{
+                    className: "block text-sm font-medium text-gray-700",
+                  }}
+                  {...register("password", {
+                    validate: (value: string) => {
+                      if (value.length >= 7) return true;
+                      return "Password length must be atleast 7";
+                    },
+                  })}
+                  className="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 shadow-sm focus:border-black focus:outline-none focus:ring-black sm:text-sm"
+                />
+                <PasswordField
+                  label={t("confirm_password")}
+                  {...register("passwordcheck", {
+                    validate: (value) =>
+                      value === methods.watch("password") || (t("error_password_mismatch") as string),
+                  })}
+                />
+              </div>
+              <div className="flex space-x-2 rtl:space-x-reverse">
+                <Button type="submit" loading={isSubmitting} className="w-7/12 justify-center">
+                  {t("create_account")}
+                </Button>
+                <Button
+                  color="secondary"
+                  className="w-5/12 justify-center"
+                  onClick={() =>
+                    signIn("Cal.com", {
+                      callbackUrl: router.query.callbackUrl
+                        ? `${WEBAPP_URL}/${router.query.callbackUrl}`
+                        : `${WEBAPP_URL}/getting-started`,
+                    })
+                  }>
+                  {t("login_instead")}
+                </Button>
+              </div>
+            </form>
+          </FormProvider>
         </div>
       </div>
-    </LicenseRequired>
+    </div>
   );
 }
 
