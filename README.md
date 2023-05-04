@@ -64,9 +64,21 @@ Here is what you need to be able to run Cal.
     sudo yarn dx
     ```
 - Run this SSL proxy in second terminal:
-    - ```sh
+     - ```sh
       sudo npm i -g local-ssl-proxy
-      ```
+     ```
+     -  Write this command below, and a editor will open in terminal.
+       ```sh
+        sudo nano /etc/hosts
+       ```
+       Add the following line in the editor:
+       ```sh
+        127.0.0.1        localhost.onecal.com
+       ```
+     -  ```sh
+        yarn run-ssl
+       ```
+    - 
 #### Quick start with `sudo yarn dx`
 
 > - **Requires Docker and Docker Compose to be installed**
