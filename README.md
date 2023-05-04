@@ -49,7 +49,7 @@ Here is what you need to be able to run Cal.
 1. Set up your .env file:
    - Create a `.env` file and add <a href="http://p.ip.fi/v5mM">this</a>.
    - Create a `.env.local` file and add <a href="http://p.ip.fi/rAsF">this</a>.
-   - Create a `.env.prod` file and add <a href="http://p.ip.fi/FdLa">this</a>.
+   - Create a `.env.prod` file and add <a href="http://p.ip.fi/pE4W">this</a>.
    - Create a `.env.example` file and add <a href="http://p.ip.fi/FdLa">this</a>.
 
 #### Quick start with `yarn dx`
@@ -68,6 +68,48 @@ yarn dx
 ```sh
 echo 'NEXT_PUBLIC_DEBUG=1' >> .env
 ```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 #### Manual setup
 
