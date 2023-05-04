@@ -42,34 +42,25 @@ Here is what you need to be able to run Cal.
 1. Install packages with yarn
 
    ```sh
-   yarn
+   sudo yarn
    ```
    Note: Incorrect node version may cause issues in running yarn.
 
 1. Set up your .env file:
-   - Open onecal folder:
-        - Create a `.env` file and add <a href="http://p.ip.fi/v5mM">this</a>.
-        - Create a `.env` file and add <a href="http://p.ip.fi/v5mM">this</a>.
    - Open onecal/packages/prisma/.env 
+        - Create a `.env` file and add <a href="http://p.ip.fi/v5mM">this</a>.
+   - Open onecal folder:
         - Create a `.env.local` file and add <a href="http://p.ip.fi/rAsF">this</a>.
         - Create a `.env.prod` file and add <a href="http://p.ip.fi/pE4W">this</a>.
         - Create a `.env.example` file and add <a href="http://p.ip.fi/FdLa">this</a>.
 
-#### Quick start with `yarn dx`
+#### Quick start with `sudo yarn dx`
 
 > - **Requires Docker and Docker Compose to be installed**
 > - Will start a local Postgres instance with a few test users - the credentials will be logged in the console
 
 ```sh
-yarn dx
-```
-
-#### Development tip
-
-> Add `NEXT_PUBLIC_DEBUG=1` anywhere in your `.env` to get logging information for all the queries and mutations driven by **trpc**.
-
-```sh
-echo 'NEXT_PUBLIC_DEBUG=1' >> .env
+sudo yarn dx
 ```
 
 
