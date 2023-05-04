@@ -54,6 +54,19 @@ Here is what you need to be able to run Cal.
         - Create a `.env.prod` file and add <a href="http://p.ip.fi/pE4W">this</a>.
         - Create a `.env.example` file and add <a href="http://p.ip.fi/FdLa">this</a>.
 
+#### Starting Application Locally:
+- Run command `sudo yarn dx` in first terminal: 
+
+    > - **Requires Docker and Docker Compose to be installed**
+    > - Will start a local Postgres instance with a few test users - the credentials will be logged in the console
+
+    ```sh
+    sudo yarn dx
+    ```
+- Run this SSL proxy in second terminal:
+    - ```sh
+      sudo npm i -g local-ssl-proxy
+      ```
 #### Quick start with `sudo yarn dx`
 
 > - **Requires Docker and Docker Compose to be installed**
