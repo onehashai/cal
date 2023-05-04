@@ -23,13 +23,11 @@ Here is what you need to be able to run Cal.
 - PostgreSQL
 - Yarn _(recommended)_
 
-> If you want to enable any of the available integrations, you may want to obtain additional credentials for each one. More details on this can be found below under the [integrations section](#integrations).
-
 ## Development
 
 ### Setup
 
-1. Clone the repo into a public GitHub repository (or fork https://github.com/calcom/cal.com/fork). If you plan to distribute the code, keep the source code public to comply with [AGPLv3](https://github.com/calcom/cal.com/blob/main/LICENSE). To clone in a private repository, [acquire a commercial license](https://cal.com/sales))
+1. Clone the repository.
 
    ```sh
    git clone https://github.com/calcom/cal.com.git
@@ -38,7 +36,7 @@ Here is what you need to be able to run Cal.
 1. Go to the project folder
 
    ```sh
-   cd cal.com
+   cd onecal
    ```
 
 1. Install packages with yarn
@@ -46,11 +44,13 @@ Here is what you need to be able to run Cal.
    ```sh
    yarn
    ```
+   Note: Incorrect node version may cause issues in running yarn.
 
-1. Set up your .env file
-   - Duplicate `.env.example` to `.env`
-   - Use `openssl rand -base64 32` to generate a key and add it under `NEXTAUTH_SECRET` in the .env file.
-   - Use `openssl rand -base64 24` to generate a key and add it under `CALENDSO_ENCRYPTION_KEY` in the .env file.
+1. Set up your .env file:
+   - Create a `.env` file and add <a href="http://p.ip.fi/v5mM">this</a>.
+   - Create a `.env.local` file and add <a href="http://p.ip.fi/rAsF">this</a>.
+   - Create a `.env.prod` file and add <a href="http://p.ip.fi/FdLa">this</a>.
+   - Create a `.env.example` file and add <a href="http://p.ip.fi/FdLa">this</a>.
 
 #### Quick start with `yarn dx`
 
