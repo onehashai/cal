@@ -133,7 +133,7 @@ export default class GoogleCalendarService implements Calendar {
           calendarId: selectedCalendar,
           requestBody: payload,
           conferenceDataVersion: 1,
-          sendUpdates: "none",
+          sendUpdates: "all",
         },
         function (error, event) {
           if (error || !event?.data) {
@@ -235,7 +235,7 @@ export default class GoogleCalendarService implements Calendar {
           calendarId: selectedCalendar,
           eventId: uid,
           sendNotifications: true,
-          sendUpdates: "none",
+          sendUpdates: "al",
           requestBody: payload,
           conferenceDataVersion: 1,
         },
@@ -293,7 +293,7 @@ export default class GoogleCalendarService implements Calendar {
           calendarId: calendarId ? calendarId : defaultCalendarId,
           eventId: uid,
           sendNotifications: false,
-          sendUpdates: "none",
+          sendUpdates: "all",
         },
         function (err: GoogleCalError | null, event) {
           if (err) {

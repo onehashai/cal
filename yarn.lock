@@ -4019,7 +4019,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@calcom/embed-react@workspace:*, @calcom/embed-react@workspace:packages/embeds/embed-react":
+"@calcom/embed-react@workspace:*, @calcom/embed-react@workspace:^, @calcom/embed-react@workspace:packages/embeds/embed-react":
   version: 0.0.0-use.local
   resolution: "@calcom/embed-react@workspace:packages/embeds/embed-react"
   dependencies:
@@ -15878,6 +15878,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "calcom-monorepo@workspace:."
   dependencies:
+    "@calcom/embed-react": "workspace:^"
     "@deploysentinel/playwright": ^0.3.3
     "@playwright/test": ^1.31.2
     "@snaplet/copycat": ^0.3.0
