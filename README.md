@@ -46,13 +46,7 @@ Here is what you need to be able to run Cal.
    ```
    Note: Incorrect node version may cause issues in running yarn.
 
-1. Set up your .env file:
-   - Open onecal/packages/prisma folder:
-        - Create a `.env` file and add <a href="http://p.ip.fi/v5mM">this</a>.
-   - Open onecal folder:
-        - Create a `.env.local` file and add <a href="http://p.ip.fi/rAsF">this</a>.
-        - Create a `.env.prod` file and add <a href="http://p.ip.fi/pE4W">this</a>.
-        - Create a `.env.example` file and add <a href="http://p.ip.fi/FdLa">this</a>.
+1. Set up your .env file , contact the team lead for further details
 
 ### Starting Application Locally:
 - #### Run command `sudo yarn dx` in first terminal: 
