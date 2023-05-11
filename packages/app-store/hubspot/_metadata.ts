@@ -10,7 +10,7 @@ export const metadata = {
   imageSrc: "/api/app-store/hubspot/icon.svg",
   variant: "other_calendar",
   logo: "/api/app-store/hubspot/icon.svg",
-  publisher: "Cal.com",
+  publisher: "OneHash",
   url: "https://hubspot.com/",
   verified: true,
   rating: 4.3, // TODO: placeholder for now, pull this from TrustPilot or G2

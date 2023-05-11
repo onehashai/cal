@@ -22,7 +22,7 @@ import { ETH_MESSAGE, getProviders, SUPPORTED_CHAINS } from "../utils/ethereum";
 const { chains, provider } = configureChains(SUPPORTED_CHAINS, getProviders());
 
 const { connectors } = getDefaultWallets({
-  appName: "Cal.com",
+  appName: "OneHash",
   chains,
 });
 

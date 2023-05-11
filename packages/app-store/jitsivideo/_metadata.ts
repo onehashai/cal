@@ -11,7 +11,7 @@ export const metadata = {
   variant: "conferencing",
   categories: ["video"],
   logo: "/api/app-store/jitsivideo/icon.svg",
-  publisher: "Cal.com",
+  publisher: "OneHash",
   url: "https://jitsi.org/",
   verified: true,
   rating: 0, // TODO: placeholder for now, pull this from TrustPilot or G2

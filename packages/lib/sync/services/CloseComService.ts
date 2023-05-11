@@ -9,7 +9,7 @@ import SyncServiceCore from "@calcom/lib/sync/ISyncService";
 import type { ConsoleUserInfoType, WebUserInfoType } from "@calcom/lib/sync/ISyncService";
 import type ISyncService from "@calcom/lib/sync/ISyncService";
 
-// Cal.com Custom Contact Fields
+// OneHash Custom Contact Fields
 const calComCustomContactFields: CloseComFieldOptions = [
   // Field name, field type, required?, multiple values?
   ["Username", "text", false, false],
@@ -35,7 +35,7 @@ export default class CloseComService extends SyncServiceCore implements ISyncSer
     role?: string
   ) => {
     this.log.debug("sync:closecom:user", { user });
-    // Get Cal.com Lead
+    // Get OneHash Lead
     const leadId = await getCloseComLeadId(this.service, leadInfo);
     this.log.debug("sync:closecom:user:leadId", { leadId });
     // Get Contacts ids: already creates contacts

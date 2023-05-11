@@ -13,7 +13,7 @@ export const metadata = {
   category: "calendar",
   categories: ["calendar"],
   logo: "/api/app-store/caldavcalendar/icon.svg",
-  publisher: "Cal.com",
+  publisher: "OneHash",
   rating: 5,
   reviews: 69,
   slug: "caldav-calendar",

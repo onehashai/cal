@@ -1,8 +1,8 @@
 {
   "name": "@calcom/feature-auth",
   "sideEffects": false,
-  "description": "Cal.com's main auth code",
-  "authors": "Cal.com, Inc.",
+  "description": "OneHash's main auth code",
+  "authors": "OneHash, Inc.",
   "version": "1.0.0",
   "main": "index.ts",
   "dependencies": {

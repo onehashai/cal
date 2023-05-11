@@ -14,7 +14,7 @@ export const metadata = {
   categories: ["calendar"],
   label: "Exchange Calendar",
   logo: "/api/app-store/exchange2013calendar/icon.svg",
-  publisher: "Cal.com",
+  publisher: "OneHash",
   rating: 5,
   reviews: 69,
   slug: "exchange2013-calendar",

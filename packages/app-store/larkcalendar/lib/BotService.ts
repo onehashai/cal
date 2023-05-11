@@ -7,12 +7,12 @@ const log = logger.getChildLogger({ prefix: [`[[LarkTenantCredential]`] });
 
 const msg = {
   en_us: {
-    title: "Welcome to Cal.com!",
+    title: "Welcome to OneHash!",
     content: [
       [
         {
           tag: "text",
-          text: "Cal.com is an open source scheduling infrastructure.",
+          text: "OneHash is an open source scheduling infrastructure.",
         },
       ],
       [

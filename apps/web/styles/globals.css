@@ -177,7 +177,7 @@ button[role="switch"][data-state="checked"] {
 }
 
 .react-daterange-picker > .react-daterange-picker__wrapper input {
-  /* Makes sure the on-focus behaviour is like Cal.com's */
+  /* Makes sure the on-focus behaviour is like OneHash's */
   @apply my-0.5 h-auto rounded-sm py-0.5;
 }
 

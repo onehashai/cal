@@ -1,6 +1,6 @@
 <!-- PROJECT LOGO -->
 <p align="center">
-  <h3 align="center">OneCal.com </h3>
+  <h3 align="center">OneHash </h3>
 </p>
 
 <!-- ABOUT THE PROJECT -->
