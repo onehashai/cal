@@ -18,7 +18,7 @@ export const metadata = {
   trending: true,
   reviews: 69,
   imageSrc: "/api/app-store/stripepayment/icon.svg",
-  publisher: "Cal.com",
+  publisher: "OneHash",
   title: "Stripe",
   type: "stripe_payment",
   url: "https://cal.com/",

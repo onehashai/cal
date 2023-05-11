@@ -15,7 +15,7 @@ export const metadata = {
   imageSrc: "/api/app-store/googlevideo/logo.webp",
   variant: "conferencing",
   logo: "/api/app-store/googlevideo/logo.webp",
-  publisher: "Cal.com",
+  publisher: "OneHash",
   rating: 5,
   reviews: 69,
   trending: false,

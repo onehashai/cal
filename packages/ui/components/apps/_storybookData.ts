@@ -12,7 +12,7 @@ export const _SBApps: App[] = [
     category: "calendar",
     categories: ["calendar"],
     logo: "/api/app-store/googlecalendar/icon.svg",
-    publisher: "Cal.com",
+    publisher: "OneHash",
     rating: 5,
     reviews: 69,
     slug: "google-calendar",
@@ -30,7 +30,7 @@ export const _SBApps: App[] = [
     imageSrc: "/api/app-store/zoomvideo/icon.svg",
     variant: "conferencing",
     logo: "/api/app-store/zoomvideo/icon.svg",
-    publisher: "Cal.com",
+    publisher: "OneHash",
     url: "https://zoom.us/",
     verified: true,
     rating: 4.3, // TODO: placeholder for now, pull this from TrustPilot or G2

@@ -10,7 +10,7 @@ export const metadata = {
   categories: ["automation"],
   imageSrc: "/api/app-store/zapier/icon.svg",
   logo: "/api/app-store/zapier/icon.svg",
-  publisher: "Cal.com",
+  publisher: "OneHash",
   rating: 0,
   reviews: 0,
   slug: "zapier",

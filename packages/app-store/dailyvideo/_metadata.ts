@@ -13,7 +13,7 @@ export const metadata = {
   categories: ["video"],
   trending: true,
   logo: "/api/app-store/dailyvideo/icon.svg",
-  publisher: "Cal.com",
+  publisher: "OneHash",
   verified: true,
   rating: 4.3, // TODO: placeholder for now, pull this from TrustPilot or G2
   reviews: 69, // TODO: placeholder for now, pull this from TrustPilot or G2

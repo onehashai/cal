@@ -12,7 +12,7 @@ export const metadata = {
   category: "calendar",
   categories: ["calendar"],
   logo: "/api/app-store/office365calendar/icon.svg",
-  publisher: "Cal.com",
+  publisher: "OneHash",
   rating: 5,
   reviews: 69,
   slug: "office365-calendar",

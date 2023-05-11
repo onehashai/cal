@@ -11,7 +11,7 @@ export const metadata = {
   imageSrc: "/api/app-store/zoomvideo/icon.svg",
   variant: "conferencing",
   logo: "/api/app-store/zoomvideo/icon.svg",
-  publisher: "Cal.com",
+  publisher: "OneHash",
   url: "https://zoom.us/",
   verified: true,
   rating: 4.3, // TODO: placeholder for now, pull this from TrustPilot or G2
