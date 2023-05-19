@@ -20,7 +20,7 @@ export const metadata = {
   slug: "zoom",
   title: "Zoom Video",
   trending: true,
-  email: "help@cal.com",
+  email: "support@onehash.ai",
   appData: {
     location: {
       default: false,

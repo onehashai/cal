@@ -20,7 +20,7 @@ export const metadata = {
   slug: "hubspot",
   title: "HubSpot CRM",
   trending: true,
-  email: "help@cal.com",
+  email: "support@onehash.ai",
   dirName: "hubspot",
 } as AppMeta;
 

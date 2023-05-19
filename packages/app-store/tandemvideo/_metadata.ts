@@ -20,7 +20,7 @@ export const metadata = {
   rating: 0,
   reviews: 0,
   isGlobal: false,
-  email: "help@cal.com",
+  email: "support@onehash.ai",
   appData: {
     location: {
       linkType: "dynamic",

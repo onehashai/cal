@@ -128,6 +128,9 @@ export const getServerSideProps = async () => {
   }
 
   return {
-    props: {},
-  };
+    props:{
+      statusCode: 500,
+      hasGetInitialPropsRun: true
+    }
+  }
 };

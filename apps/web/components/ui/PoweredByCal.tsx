@@ -17,12 +17,12 @@ const PoweredByCal = () => {
         <img
           className="relative -mt-px inline h-[10px] w-auto dark:hidden"
           src="/cal-logo-word.svg"
-          alt="Cal.com Logo"
+          alt="OneHashCal Logo"
         />
         <img
           className="relativ -mt-px hidden h-[10px] w-auto dark:inline"
           src="/cal-logo-word-dark.svg"
-          alt="Cal.com Logo"
+          alt="OneHashCal Logo"
         />
       </Link>
     </div>

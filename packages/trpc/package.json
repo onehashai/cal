@@ -1,7 +1,7 @@
 {
   "name": "@calcom/trpc",
   "sideEffects": false,
-  "description": "Shared tRPC library for Cal.com",
+  "description": "Shared tRPC library for OneHashCal",
   "authors": "zomars",
   "version": "1.0.0",
   "main": "index.ts",

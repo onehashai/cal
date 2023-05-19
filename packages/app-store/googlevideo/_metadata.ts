@@ -22,7 +22,7 @@ export const metadata = {
   url: "https://cal.com/",
   verified: true,
   isGlobal: false,
-  email: "help@cal.com",
+  email: "support@onehash.ai",
   appData: {
     location: {
       linkType: "dynamic",

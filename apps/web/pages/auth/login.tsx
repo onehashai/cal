@@ -228,6 +228,8 @@ const _getServerSideProps = async function getServerSideProps(context: GetServer
 
   const session = await getServerSession({ req, res });
   const ssr = await ssrInit(context);
+  console.log(session,"Session")
+  console.log(ssr,"SSR")
 
   const verifyJwt = (jwt: string) => {
     const secret = new TextEncoder().encode(process.env.CALENDSO_ENCRYPTION_KEY);
@@ -238,11 +240,13 @@ const _getServerSideProps = async function getServerSideProps(context: GetServer
       algorithms: ["HS256"],
     });
   };
+  console.log(verifyJwt,"Verify Jwt")
 
   let totpEmail = null;
   if (context.query.totp) {
     try {
       const decryptedJwt = await verifyJwt(context.query.totp as string);
+      console.log(decryptedJwt)
       if (decryptedJwt.payload) {
         totpEmail = decryptedJwt.payload.email as string;
       } else {
@@ -262,7 +266,7 @@ const _getServerSideProps = async function getServerSideProps(context: GetServer
       };
     }
   }
-
+  console.log(session,"Session")
   if (session) {
     return {
       redirect: {
@@ -273,6 +277,7 @@ const _getServerSideProps = async function getServerSideProps(context: GetServer
   }
 
   const userCount = await prisma.user.count();
+  console.log(userCount,"UserCount")
   if (userCount === 0) {
     // Proceed to new onboarding to create first admin user
     return {
@@ -282,6 +287,15 @@ const _getServerSideProps = async function getServerSideProps(context: GetServer
       },
     };
   }
+  // console.log({
+  //   csrfToken: await getCsrfToken(context),
+  //   trpcState: ssr.dehydrate(),
+  //   isGoogleLoginEnabled: IS_GOOGLE_LOGIN_ENABLED,
+  //   isSAMLLoginEnabled,
+  //   samlTenantID,
+  //   samlProductID,
+  //   totpEmail: null, // Replace undefined with null
+  // },"Final Object")
   return {
     props: {
       csrfToken: await getCsrfToken(context),
@@ -290,7 +304,7 @@ const _getServerSideProps = async function getServerSideProps(context: GetServer
       isSAMLLoginEnabled,
       samlTenantID,
       samlProductID,
-      totpEmail,
+      totpEmail: null, // Replace undefined with null
     },
   };
 };

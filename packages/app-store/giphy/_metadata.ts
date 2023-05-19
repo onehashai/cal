@@ -21,7 +21,7 @@ export const metadata = {
   variant: "other",
   verified: true,
   extendsFeature: "EventType",
-  email: "help@cal.com",
+  email: "support@onehash.ai",
   dirName: "giphy",
 } as AppMeta;
 

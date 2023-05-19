@@ -12,14 +12,14 @@ export const _SBApps: App[] = [
     category: "calendar",
     categories: ["calendar"],
     logo: "/api/app-store/googlecalendar/icon.svg",
-    publisher: "Cal.com",
+    publisher: "OneHashCal",
     rating: 5,
     reviews: 69,
     slug: "google-calendar",
     trending: false,
     url: "https://cal.com/",
     verified: true,
-    email: "help@cal.com",
+    email: "support@onehash.ai",
     dirName: "googlecalendar",
   },
   {
@@ -30,7 +30,7 @@ export const _SBApps: App[] = [
     imageSrc: "/api/app-store/zoomvideo/icon.svg",
     variant: "conferencing",
     logo: "/api/app-store/zoomvideo/icon.svg",
-    publisher: "Cal.com",
+    publisher: "OneHashCal",
     url: "https://zoom.us/",
     verified: true,
     rating: 4.3, // TODO: placeholder for now, pull this from TrustPilot or G2
@@ -39,7 +39,7 @@ export const _SBApps: App[] = [
     slug: "zoom",
     title: "Zoom Video",
     trending: true,
-    email: "help@cal.com",
+    email: "support@onehash.ai",
     appData: {
       location: {
         default: false,

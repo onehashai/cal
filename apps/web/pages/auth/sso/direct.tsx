@@ -7,7 +7,7 @@ import { HOSTED_CAL_FEATURES } from "@calcom/lib/constants";
 import type { inferSSRProps } from "@lib/types/inferSSRProps";
 
 // This page is used to initiate the SAML authentication flow by redirecting to the SAML provider.
-// Accessible only on self-hosted Cal.com instances.
+// Accessible only on self-hosted OneHashCal instances.
 export default function Page({ samlTenantID, samlProductID }: inferSSRProps<typeof getServerSideProps>) {
   const router = useRouter();
 

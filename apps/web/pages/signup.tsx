@@ -218,7 +218,7 @@ export default function Signup({ prepopulateFormValues }: inferSSRProps<typeof g
                   color="secondary"
                   className="w-5/12 justify-center"
                   onClick={() =>
-                    signIn("Cal.com", {
+                    signIn("OneHashCal", {
                       callbackUrl: router.query.callbackUrl
                         ? `${WEBAPP_URL}/${router.query.callbackUrl}`
                         : `${WEBAPP_URL}/getting-started`,

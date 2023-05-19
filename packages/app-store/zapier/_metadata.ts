@@ -20,7 +20,7 @@ export const metadata = {
   url: "https://cal.com/apps/zapier",
   variant: "automation",
   verified: true,
-  email: "help@cal.com",
+  email: "support@onehash.ai",
   dirName: "zapier",
 } as AppMeta;
 

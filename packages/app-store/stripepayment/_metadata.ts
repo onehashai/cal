@@ -26,7 +26,7 @@ export const metadata = {
   variant: "payment",
   extendsFeature: "EventType",
   verified: true,
-  email: "help@cal.com",
+  email: "support@onehash.ai",
   dirName: "stripepayment",
 } as AppMeta;
 

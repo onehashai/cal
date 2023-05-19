@@ -20,7 +20,7 @@ export const metadata = {
   title: "Jitsi Meet",
   trending: true,
   isGlobal: false,
-  email: "help@cal.com",
+  email: "support@onehash.ai",
   appData: {
     location: {
       linkType: "dynamic",

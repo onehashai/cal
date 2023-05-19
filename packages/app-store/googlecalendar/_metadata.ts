@@ -21,7 +21,7 @@ export const metadata = {
   trending: false,
   url: "https://cal.com/",
   verified: true,
-  email: "help@cal.com",
+  email: "support@onehash.ai",
   dirName: "googlecalendar",
 } as AppMeta;
 
