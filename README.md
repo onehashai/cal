@@ -73,3 +73,7 @@ Here is what you need to be able to run Cal.
        - ```sh
           yarn run-ssl
          ```
+ - #### Open the Localhost URL:
+     - ```sh
+        https://localhost.onecal.com:3001
+       ```
